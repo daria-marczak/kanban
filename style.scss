@@ -1,0 +1,98 @@
+@import "https://fonts.googleapis.com/css?family=Lato";
+
+$grayish: #ecf0f1;
+$background: #34495e;
+$orange: #f1c40f;
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Lato", sans-serif;
+    background-color: $background;
+    color: $orange;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+}
+
+.board {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.column-container {
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+
+    .column {
+        text-align:left;
+        background-color: $grayish;
+        display: inline-block;
+        padding: 20px;
+        margin-left: 20px;
+        margin-bottom: 2rem;
+        min-width: 350px;
+        min-height: 450px;
+        color: $background;
+        ul {
+            list-style-type: none;
+            padding: 0;
+            display: block;
+            li {
+                display: block;
+            }
+        }
+
+        p {
+        	line-height: 1.2rem;
+            display: inline-block;
+            margin-right:150px;
+        }
+
+        h2 {
+            display: inline-block;
+            line-height: 20px;
+        }
+        button {
+            background-color: $orange;
+            border: 0;
+            padding: 0.5rem 0.95rem;
+            color: $background;
+            font-weight: bold;
+            display: inline-block;
+            float: right;
+            cursor: pointer;
+            margin-left: 5px;
+            .btn-delete {
+                float: right;
+                margin-top: 2px;
+            }
+        }
+        .card-placeholder {
+            background-color: $background;
+        }
+    }
+}
+
+.create-column {
+	background-color: $orange;
+    border: 0;
+    padding: 1rem 1.5rem;
+    font-size: 0.75rem;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    vertical-align: middle;
+    display: block;
+    color: $background;
+    font-weight: bold;
+    cursor: pointer;
+}
