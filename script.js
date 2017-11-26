@@ -26,9 +26,20 @@ $(function() {
                 self.removeColumn();
             });
 
-            $columnAddCard.click(function() {
-                self.addCard(new Card(prompt("Enter the card's name")));
+             $columnAddCard.click(function() {
+             	var cardName = prompt("Enter a card's name");
+
+		        if (cardName === null) {
+		        	return false;
+		        } if (cardName === "") {
+		        	cardName = "New task";
+		        } else {
+		        	return false;
+		        };
+
+		        self.addCard(new Card(cardName))
             });
+
             $column.append($columnTitle)
                 .append($columnDelete)
                 .append($columnAddCard)
@@ -92,6 +103,14 @@ $(function() {
 
     $(".create-column").click(function() {
         var name = prompt("Enter a column name");
+
+        if (name == null) {
+        	return false;
+        } if (name === "") {
+        	name = "Do it";
+        } else {
+        	return false;
+        }
         var column = new Column(name);
         board.addColumn(column);
     });
