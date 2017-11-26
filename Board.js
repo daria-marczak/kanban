@@ -14,7 +14,17 @@ $(".create-column").click(function() {
         return false;
     }
     if (name === "") {
-        name = "Do it";
+        $.ajax({
+            url: baseUrl + "/column",
+            method: "POST",
+            data: {
+                name: "Do it"
+            },
+            success: function(response){
+                var column = new Column(response.id, name);
+                board.addColumn(column);
+            }
+        });
     } else {
         $.ajax({
             url: baseUrl + "/column",

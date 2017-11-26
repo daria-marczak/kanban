@@ -25,7 +25,18 @@ function Column(id, name) {
                 return false;
             }
             if (cardName === "") {
-                cardName = "New task";
+                $.ajax({
+                    url: baseUrl + "/card",
+                    method: "POST",
+                    data: {
+                        name: "Task"
+                        bootcamp_kanban_column_id: self.id
+                    },
+                    success: function() {
+                        var card = addCard(response.id, cardName);
+                        self.createCard(card);
+                    }
+                });
             } else {
                 $.ajax({
                     url: baseUrl + "/card",

@@ -25,7 +25,7 @@ Card.prototype.removeCard = function() {
         url: baseUrl + "/card/" + self.id,
         method: "DELETE",
         success: function() {
-            self.element.remove();
+            self.element.delete();
         }
     });
 };
