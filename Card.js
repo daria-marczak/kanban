@@ -2,7 +2,7 @@ function Card(id, name) {
     var self = this;
 
     this.id = id;
-    this.name = name ;
+    this.name = name;
     this.$element = createCard();
 
     function createCard() {
