@@ -2,7 +2,7 @@ function Card(id, name) {
     var self = this;
 
     this.id = id;
-    this.name = name;
+    this.name = name ;
     this.$element = createCard();
 
     function createCard() {
@@ -25,7 +25,7 @@ Card.prototype.removeCard = function() {
         url: baseUrl + "/card/" + self.id,
         method: "DELETE",
         success: function() {
-            self.element.delete();
+            self.$element.remove(response);
         }
     });
 };

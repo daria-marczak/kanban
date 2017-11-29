@@ -2,6 +2,7 @@ function Column(id, name) {
     this.id = id;
     this.name = name || "To do";
     var self = this;
+    var cardName;
 
     this.$element = createColumn();
 
@@ -19,41 +20,26 @@ function Column(id, name) {
 
         $columnAddCard.click(function(event) {
             var cardName = prompt("Enter a card's name");
-            event.preventDefault();
 
             if (cardName === null) {
                 return false;
             }
             if (cardName === "") {
-                $.ajax({
-                    url: baseUrl + "/card",
-                    method: "POST",
-                    data: {
-                        name: "Task"
-                        bootcamp_kanban_column_id: self.id
-                    },
-                    success: function() {
-                        var card = addCard(response.id, cardName);
-                        self.createCard(card);
-                    }
-                });
-            } else {
-                $.ajax({
-                    url: baseUrl + "/card",
-                    method: "POST",
-                    data: {
-                        name: cardName,
-                        bootcamp_kanban_column_id: self.id
-                    },
-                    success: function() {
-                        var card = addCard(response.id, cardName);
-                        self.createCard(card);
-                    }
-                });
-            };
+                cardName = "Task";
+            }
 
+            $.ajax({
+                url: baseUrl + "/card",
+                method: "POST",
+                data: {
+                    name: cardName,
+                    bootcamp_kanban_column_id: self.id
+                },
+                success: function(response) {
+                    self.addCard(new Card(response.id, cardName));
+                }
+            });
         });
-
         $column.append($columnTitle)
             .append($columnDelete)
             .append($columnAddCard)
@@ -61,6 +47,8 @@ function Column(id, name) {
 
         return $column;
     };
+
+
 };
 
 Column.prototype.addCard = function(card) {
@@ -70,10 +58,10 @@ Column.prototype.removeColumn = function() {
     var self = this;
 
     $.ajax({
-        url: baseUrl + '/column/' + self.id,
+        url: baseUrl + "/column/" + self.id,
         method: 'DELETE',
         success: function(response) {
-            self.element.remove();
+            self.$element.remove();
         }
     });
 };

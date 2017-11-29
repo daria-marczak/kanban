@@ -8,36 +8,26 @@ var board = {
 };
 
 $(".create-column").click(function() {
-    var name = prompt("Enter a column name");
+    var columnName = prompt("Enter a column name");
 
-    if (name == null) {
+    if (columnName == null) {
         return false;
     }
-    if (name === "") {
-        $.ajax({
-            url: baseUrl + "/column",
-            method: "POST",
-            data: {
-                name: "Do it"
-            },
-            success: function(response){
-                var column = new Column(response.id, name);
-                board.addColumn(column);
-            }
-        });
-    } else {
-        $.ajax({
-            url: baseUrl + "/column",
-            method: "POST",
-            data: {
-                name: name
-            },
-            success: function(response){
-                var column = new Column(response.id, name);
-                board.addColumn(column);
-            }
-        });
-    }
+    if (columnName === "") {
+        columnName = "Do it";
+
+    };
+
+    $.ajax({
+        url: baseUrl + "/column",
+        method: "POST",
+        data: {
+            name: columnName,
+        },
+        success: function(response) {
+            board.addColumn(new Column(response.id, columnName));
+        }
+    });
 });
 
 function initSortable() {
