@@ -1,10 +1,7 @@
 @import "https://fonts.googleapis.com/css?family=Lato";
-
 $grayish: #ecf0f1;
 $background: #34495e;
 $orange: #f1c40f;
-
-
 body {
     margin: 0;
     padding: 0;
@@ -13,26 +10,22 @@ body {
     color: $orange;
     box-sizing: border-box;
 }
-
 h1 {
     text-align: center;
 }
-
 .board {
-	display: flex;
-	align-items: center;
-	flex-direction: column;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
-
 .column-container {
     padding: 5px;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: center;
-
     .column {
-        text-align:left;
+        text-align: left;
         background-color: $grayish;
         display: inline-block;
         padding: 20px;
@@ -43,6 +36,7 @@ h1 {
         color: $background;
         .column-card-list {
             min-height: 2rem;
+            border: $orange 1px dashed;
         }
         ul {
             list-style-type: none;
@@ -52,13 +46,11 @@ h1 {
                 display: block;
             }
         }
-
         p {
-        	line-height: 1.2rem;
+            line-height: 1.2rem;
             display: inline-block;
-            margin-right:150px;
+            margin-right: 150px;
         }
-
         h2 {
             display: inline-block;
             line-height: 20px;
@@ -83,9 +75,8 @@ h1 {
         }
     }
 }
-
 .create-column {
-	background-color: $orange;
+    background-color: $orange;
     border: 0;
     padding: 1rem 1.5rem;
     font-size: 0.75rem;

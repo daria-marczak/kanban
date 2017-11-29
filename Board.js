@@ -15,7 +15,6 @@ $(".create-column").click(function() {
     }
     if (columnName === "") {
         columnName = "Do it";
-
     };
 
     $.ajax({
