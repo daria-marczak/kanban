@@ -36,7 +36,6 @@ h1 {
         color: $background;
         .column-card-list {
             min-height: 2rem;
-            border: $orange 1px dashed;
         }
         ul {
             list-style-type: none;
@@ -71,7 +70,8 @@ h1 {
             }
         }
         .card-placeholder {
-            background-color: $background;
+            border: $orange 1px dashed;
+            min-height: 2rem;
         }
     }
 }

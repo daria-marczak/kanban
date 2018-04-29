@@ -1,0 +1,129 @@
+@import "https://fonts.googleapis.com/css?family=Lato";
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+  background-color: #F6F6F6;
+  color: #1f1f1f;
+  box-sizing: border-box; }
+
+h1 {
+  text-align: center; }
+
+.board {
+  display: flex;
+  align-items: center;
+  flex-direction: column; }
+
+.column-container {
+  padding: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center; }
+  .column-container .column {
+    text-align: left;
+    background-color: white;
+    display: inline-block;
+    padding: 20px;
+    margin-left: 20px;
+    margin-bottom: 2rem;
+    min-width: 350px;
+    min-height: 450px;
+    border-radius: 25px;
+    -moz-box-shadow: 0 0 25px #ccc;
+    -webkit-box-shadow: 0 0 25px #ccc;
+    box-shadow: 0 0 25px #ccc; }
+    .column-container .column .column-card-list {
+      min-height: 2rem; }
+    .column-container .column ul {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column; }
+      .column-container .column ul li {
+        margin-bottom: 1em;
+        padding: 0.5em;
+        max-width: 95%;
+        border-radius: 5px;
+        background-color: rgba(246, 246, 246, 0.6); }
+    .column-container .column p {
+      line-height: 1.2rem;
+      display: inline-block;
+      margin-right: 150px;
+      color: black; }
+    .column-container .column h2 {
+      color: black;
+      display: -webkit-flex;
+      /* Safari */
+      display: flex;
+      -webkit-justify-content: center;
+      /* Safari */
+      justify-content: center;
+      -webkit-align-items: center;
+      /* Safari */
+      align-items: center; }
+    .column-container .column button {
+      background-color: #585DF2;
+      border: 0;
+      display: inline-block;
+      width: 48%;
+      padding: 0.5rem 0.95rem;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      margin-left: 5px;
+      border-radius: 5px; }
+      .column-container .column button .btn-delete {
+        float: right; }
+    .column-container .column .btn-delete-task {
+      border-radius: 50%;
+      margin-top: 0.3em;
+      background-color: white;
+      border: 1px solid gray;
+      color: gray;
+      font-weight: 300;
+      font-size: 1em;
+      float: right;
+      width: 2rem;
+      height: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      -webkit-transition-duration: 1s;
+      -moz-transition-duration: 1s;
+      -o-transition-duration: 1s;
+      transition-duration: 1s;
+      -webkit-transition-property: -webkit-transform;
+      -moz-transition-property: -moz-transform;
+      -o-transition-property: -o-transform;
+      transition-property: transform; }
+      .column-container .column .btn-delete-task:focus {
+        background-color: #585DF2;
+        color: white;
+        border: #585DF2;
+        -webkit-transition: background-color 2500ms linear;
+        -ms-transition: background-color 2500ms linear;
+        transition: background-color 2500ms linear; }
+    .column-container .column .card-placeholder {
+      border: lightgray 1px dashed;
+      min-height: 2rem;
+      padding: 0.5em; }
+
+.create-column {
+  background: #585DF2;
+  border-radius: 25px;
+  border: 0;
+  padding: 1rem 2.5rem;
+  font-size: 0.75rem;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  display: block;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  -moz-box-shadow: 0 0 15px #ccc;
+  -webkit-box-shadow: 0 0 15px #ccc;
+  box-shadow: 0 0 15px #ccc; }
