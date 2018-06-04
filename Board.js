@@ -14,7 +14,7 @@ $(".create-column").click(function() {
         return false;
     }
     if (columnName === "") {
-        columnName = "Do it";
+        columnName = "Task name";
     };
 
     $.ajax({
@@ -33,5 +33,8 @@ function initSortable() {
     $(".column-card-list").sortable({
         connectWith: ".column-card-list",
         placeholder: "card-placeholder"
+    }).disableSelection();
+    $(".column-container").sortable({
+        connectWith: "column"
     }).disableSelection();
 }

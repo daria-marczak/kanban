@@ -1,4 +1,4 @@
-$(function() {
+$(function () {
     function randomString() {
         var chars = "0123456789abcdefghiklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXTZ";
         var str = "";
@@ -22,22 +22,23 @@ $(function() {
             var $columnDelete = $("<button>").addClass("btn-delete").text("Remove");
             var $columnAddCard = $("<button>").addClass("add-card").text("Add");
 
-            $columnDelete.click(function() {
+            $columnDelete.click(function () {
                 self.removeColumn();
             });
 
-             $columnAddCard.click(function() {
-             	var cardName = prompt("Enter a card's name");
+            $columnAddCard.click(function () {
+                var cardName = prompt("Enter a card's name");
 
-		        if (cardName === null) {
-		        	return false;
-		        } if (cardName === "") {
-		        	cardName = "New task";
-		        } else {
-		        	return false;
-		        };
+                if (cardName === null) {
+                    return false;
+                }
+                if (cardName === "") {
+                    cardName = "New task";
+                } else {
+                    return false;
+                };
 
-		        self.addCard(new Card(cardName))
+                self.addCard(new Card(cardName))
             });
 
             $column.append($columnTitle)
@@ -49,10 +50,10 @@ $(function() {
         };
     };
 
-    Column.prototype.addCard = function(card) {
+    Column.prototype.addCard = function (card) {
         this.$element.children("ul").append(card.$element);
     };
-    Column.prototype.removeColumn = function() {
+    Column.prototype.removeColumn = function () {
         this.$element.remove();
     };
 
@@ -68,7 +69,7 @@ $(function() {
             var $cardDescription = $("<p>").addClass("card-description").text(self.description);
             var $cardDelete = $("<button>").addClass("btn-delete-task").text("x");
 
-            $cardDelete.click(function() {
+            $cardDelete.click(function () {
                 self.removeCard();
             });
 
@@ -77,13 +78,13 @@ $(function() {
             return $card;
         };
     };
-    Card.prototype.removeCard = function() {
+    Card.prototype.removeCard = function () {
         this.$element.remove();
     };
 
     var board = {
         name: "Kanban Board",
-        addColumn: function(column) {
+        addColumn: function (column) {
             this.$element.append(column.$element);
             initSortable();
         },
@@ -101,15 +102,16 @@ $(function() {
     }
 
 
-    $(".create-column").click(function() {
+    $(".create-column").click(function () {
         var name = prompt("Enter a column name");
 
         if (name == null) {
-        	return false;
-        } if (name === "") {
-        	name = "Do it";
+            return false;
+        }
+        if (name === "") {
+            name = "Do it";
         } else {
-        	return false;
+            return false;
         }
         var column = new Column(name);
         board.addColumn(column);
